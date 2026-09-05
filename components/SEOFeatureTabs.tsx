@@ -257,8 +257,8 @@ const FEATURES = [
     fullLabel: 'Treatment Pages',
     headline: 'One generic "Services" page won\'t rank. Treatment-specific pages do.',
     body: 'We build and optimise dedicated pages for each treatment in your neighbourhood — "dental implants in Koramangala", "teeth cleaning HSR Layout". Each page balances SEO signals with genuine patient education.',
-    stat: '3×',
-    statLabel: 'more organic traffic',
+    stat: 'Treatment-specific',
+    statLabel: 'not one generic services page',
     preview: TreatmentPagesPreview,
   },
   {

@@ -113,7 +113,7 @@ export function PageRenderer({ page, schema = false }: { page: SitePage; schema?
               </div>
               <h3 style={{ fontFamily: 'Poppins,sans-serif', fontSize: 20, fontWeight: 700, color: '#1A1A2E', margin: 0 }}>Start With the Reporting Dashboard</h3>
               <p style={{ color: '#6B7280', fontSize: 14, lineHeight: 1.75, margin: 0 }}>
-                One view combining your Google Business Profile performance, bookings and review activity — a lighter starting point for clinics who aren't ready to move onto the full CRM yet. When you are, everything carries over.
+                One view combining your Google Business Profile performance, bookings, website traffic and review activity — a lighter starting point for clinics who aren't ready to move onto the full CRM yet. When you are, everything carries over.
               </p>
               <a href="/contact" style={{ marginTop: 6, display: 'inline-flex', alignItems: 'center', gap: 6, color: '#E86C2F', fontWeight: 700, fontSize: 14, width: 'fit-content' }}>
                 Ask about the Reporting Dashboard →

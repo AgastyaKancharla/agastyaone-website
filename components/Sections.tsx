@@ -1063,22 +1063,6 @@ export function ContactStrip() {
               <Button href="/contact" variant="yellow">
                 Book Your Free Call
               </Button>
-              <a
-                href="#testimonials"
-                className="inline-flex min-h-12 items-center justify-center rounded-full px-7 py-3 text-sm font-semibold text-white transition"
-                style={{
-                  background: '#1a1a2e',
-                  border: '2px solid rgba(255,255,255,0.12)',
-                }}
-                onMouseEnter={(e) => {
-                  (e.currentTarget as HTMLAnchorElement).style.background = '#242442';
-                }}
-                onMouseLeave={(e) => {
-                  (e.currentTarget as HTMLAnchorElement).style.background = '#1a1a2e';
-                }}
-              >
-                Talk to a Past Client
-              </a>
             </div>
           </Reveal>
         </div>

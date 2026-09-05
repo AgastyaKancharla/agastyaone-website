@@ -248,14 +248,6 @@ export function Footer() {
           <p style={{ fontSize: '0.75rem', color: 'rgba(255,255,255,0.3)', margin: 0 }}>
             © 2026 AgastyaOne · Built in Bengaluru 🦷
           </p>
-          <Link
-            href="/contact"
-            style={{ fontSize: '0.75rem', color: 'rgba(255,255,255,0.3)', textDecoration: 'none', transition: 'color 0.15s' }}
-            onMouseEnter={e => ((e.currentTarget as HTMLAnchorElement).style.color = '#E86C2F')}
-            onMouseLeave={e => ((e.currentTarget as HTMLAnchorElement).style.color = 'rgba(255,255,255,0.3)')}
-          >
-            Privacy Policy
-          </Link>
         </div>
       </div>
     </footer>

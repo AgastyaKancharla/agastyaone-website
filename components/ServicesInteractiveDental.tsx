@@ -47,7 +47,7 @@ const SERVICES: Service[] = [
     angles: {
       invisible:  { stat: '#1',       outcome: 'An optimised GBP puts your clinic at the top of Maps when patients search nearby.' },
       noshows:    { stat: 'Intent',   outcome: 'Maps searchers are already ready to book — they just need to find you first.' },
-      retention:  { stat: '50+ ★',   outcome: 'More reviews on your GBP means lapsed patients trust you when they return to search.' },
+      retention:  { stat: 'Growing ★', outcome: 'More reviews on your GBP means lapsed patients trust you when they return to search.' },
       manual:     { stat: 'Passive',  outcome: 'A well-managed GBP drives calls and directions without any ongoing manual effort.' },
     },
     primary: ['invisible'],

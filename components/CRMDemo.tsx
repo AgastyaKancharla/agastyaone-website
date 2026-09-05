@@ -245,6 +245,9 @@ export function CRMDemo() {
           <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
 
             {/* Stats row */}
+            <div style={{ textAlign: 'center', fontSize: 10, fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.06em', color: 'rgba(255,255,255,0.3)', marginBottom: -2 }}>
+              Sample data — product demo
+            </div>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: 10 }}>
               {[
                 { label: "Today's Appts", value: stats.appointments, color: '#34d399', suffix: '' },
