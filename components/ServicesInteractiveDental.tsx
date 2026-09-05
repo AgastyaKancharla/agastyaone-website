@@ -33,7 +33,7 @@ const SERVICES: Service[] = [
     angles: {
       invisible:  { stat: '< 60 sec', outcome: 'Patients judge your clinic in under a minute online — a professional site wins that moment.' },
       noshows:    { stat: '↑ 40%',    outcome: 'Clear service pages and a WhatsApp button filter serious patients from tyre-kickers.' },
-      retention:  { stat: '3×',       outcome: 'A strong doctor profile and reviews page keeps your clinic top-of-mind when patients search again.' },
+      retention:  { stat: 'Top-of-mind', outcome: 'A strong doctor profile and reviews page keeps your clinic top-of-mind when patients search again.' },
       manual:     { stat: '24 / 7',   outcome: 'Your site answers patient questions and collects enquiries while your team focuses on care.' },
     },
     primary: ['invisible'],
@@ -101,7 +101,7 @@ const SERVICES: Service[] = [
     icon: '⭐',
     tagline: 'Build your reputation while you sleep.',
     angles: {
-      invisible:  { stat: '3×',       outcome: 'Clinics with 50+ reviews get 3× more clicks on Google than those with fewer than 10.' },
+      invisible:  { stat: 'More clicks', outcome: 'More recent, genuine reviews build the trust that gets a listing clicked over a competitor\'s.' },
       noshows:    { stat: 'Trust',     outcome: 'A strong review profile pre-qualifies patients — they arrive more committed and less likely to ghost.' },
       retention:  { stat: 'Recall',   outcome: 'A review request is also a touchpoint that reminds happy patients to book their next visit.' },
       manual:     { stat: 'Auto',     outcome: 'Review requests go out automatically after every visit — no one has to remember to ask.' },

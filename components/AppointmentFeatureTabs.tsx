@@ -8,7 +8,7 @@ const FEATURES = [
     tab: 'Online Booking',
     icon: '🗓️',
     headline: 'Patients book at 11PM. You wake up to a full schedule.',
-    body: 'Let patients request appointments 24/7 from your website or WhatsApp link. Your team gets structured details — name, treatment, preferred time — instead of scattered calls.',
+    body: 'Let patients request appointments 24/7 from your website or WhatsApp link. Every request is captured and routed automatically into your clinic\'s CRM or a shared Sheet — structured, not scattered across calls and messages.',
     stat: '24/7',
     statLabel: 'booking availability',
     highlight: true,

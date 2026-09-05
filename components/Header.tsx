@@ -13,7 +13,6 @@ const SERVICE_LINKS = [
   { href: '/dental-website-development',   label: 'Clinic Website',        icon: '🌐', desc: 'Trust-building, SEO-ready websites'    },
   { href: '/dental-seo-services',          label: 'SEO & GBP',             icon: '📍', desc: 'Rank #1 on Google Maps'               },
   { href: '/dentist-appointment-software', label: 'Appointment Software',  icon: '📅', desc: 'Fill slots, kill no-shows'            },
-  { href: '/dental-marketing-services',    label: 'Dental Marketing',      icon: '📣', desc: 'Grow your patient base every month'   },
   { href: '/dental-practice-automation',   label: 'Practice Automation',   icon: '⚡', desc: 'Automate reminders, recalls, reviews' },
 ];
 

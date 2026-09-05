@@ -200,6 +200,33 @@ function ReportingPreview() {
   );
 }
 
+function GEOPreview() {
+  const [step, setStep] = useState(0);
+  useEffect(() => {
+    const t = setInterval(() => setStep(s => (s + 1) % 3), 1400);
+    return () => clearInterval(t);
+  }, []);
+  return (
+    <div>
+      <div style={{ fontSize: 10, fontWeight: 700, color: 'rgba(255,255,255,0.35)', letterSpacing: '0.08em', textTransform: 'uppercase', marginBottom: 8 }}>Asked on an AI answer engine</div>
+      <div style={{ background: 'rgba(255,255,255,0.05)', borderRadius: 10, padding: '10px 14px', marginBottom: 8, border: '1px solid rgba(255,255,255,0.08)' }}>
+        <span style={{ fontSize: 11, color: 'rgba(255,255,255,0.6)' }}>💬 "Best dentist near Koramangala for a root canal?"</span>
+      </div>
+      <div style={{ background: step >= 1 ? 'rgba(232,108,47,0.1)' : 'rgba(255,255,255,0.05)', border: `1px solid ${step >= 1 ? 'rgba(232,108,47,0.3)' : 'rgba(255,255,255,0.08)'}`, borderRadius: 10, padding: '10px 14px', transition: 'all 0.5s ease' }}>
+        <div style={{ fontSize: 10, color: 'rgba(255,255,255,0.35)', marginBottom: 4 }}>AI answer</div>
+        <div style={{ fontSize: 11, color: step >= 1 ? '#fff' : 'rgba(255,255,255,0.3)', lineHeight: 1.6, transition: 'color 0.5s ease' }}>
+          {step >= 1 ? 'A few options come up locally, including your clinic — with its services, hours and reviews cited directly.' : 'Waiting for AI engines to have enough structured signal about your clinic…'}
+        </div>
+      </div>
+      {step >= 2 && (
+        <div style={{ marginTop: 8, background: 'rgba(34,197,94,0.1)', border: '1px solid rgba(34,197,94,0.3)', borderRadius: 10, padding: '8px 14px', fontSize: 11, color: '#22C55E', fontWeight: 600, animation: 'fadeUp 0.3s ease' }}>
+          ✓ Structured for GBP, website and reviews to be citable by AI engines
+        </div>
+      )}
+    </div>
+  );
+}
+
 // ─── Feature data ─────────────────────────────────────────────────────────────
 
 const FEATURES = [
@@ -220,8 +247,8 @@ const FEATURES = [
     fullLabel: 'Local Keyword Research',
     headline: 'Ranking for the wrong keywords is worse than not ranking at all.',
     body: 'We identify the exact searches patients use in your neighbourhood — not generic national keywords. Every page gets a primary local keyword, secondary terms, and semantic signals that tell Google exactly who you serve.',
-    stat: '50+',
-    statLabel: 'local keywords mapped',
+    stat: 'Local-first',
+    statLabel: 'not generic national keywords',
     preview: KeywordsPreview,
   },
   {
@@ -238,10 +265,10 @@ const FEATURES = [
     tab: 'Reviews',
     icon: '⭐',
     fullLabel: 'Review Generation',
-    headline: 'Clinics with 50+ reviews get 3× more clicks than those with 10.',
+    headline: 'More recent reviews build more trust — and Google rewards clinics that keep earning them.',
     body: 'We build a repeatable system for requesting reviews at exactly the right moment — after treatment, via WhatsApp, automatically. You don\'t have to ask anyone manually ever again. Reviews compound into a permanent trust advantage.',
-    stat: '50+',
-    statLabel: 'reviews target in 6 months',
+    stat: 'Automatic',
+    statLabel: 'requested after every visit',
     preview: ReviewsPreview,
     highlight: true,
   },
@@ -250,10 +277,20 @@ const FEATURES = [
     icon: '🗂️',
     fullLabel: 'Local Citations',
     headline: 'Inconsistent business details confuse Google and hurt your rankings.',
-    body: 'We audit every directory listing for your clinic — Justdial, Sulekha, IndiaMart, Practo and 20+ more — fixing mismatches in name, address and phone. Consistent NAP signals are a foundational ranking factor most clinics ignore.',
-    stat: '25+',
-    statLabel: 'directories audited',
+    body: 'We audit your directory listings across Practo, Justdial, Sulekha, IndiaMART and more — fixing mismatches in name, address and phone. Consistent NAP signals across every directory are a foundational ranking factor most clinics ignore.',
+    stat: 'NAP',
+    statLabel: 'consistency across directories',
     preview: CitationsPreview,
+  },
+  {
+    tab: 'AI Search',
+    icon: '🤖',
+    fullLabel: 'AI Search Visibility (GEO)',
+    headline: 'Patients are starting to ask ChatGPT, Gemini and Perplexity for a dentist nearby — almost no clinic is set up for that yet.',
+    body: 'We structure your website content, Google Business Profile data and review signals so AI answer engines can actually find and recommend your clinic — not just Google Search. Almost no dental clinics in Bengaluru are optimised for this yet, which makes it an early-mover advantage while it lasts.',
+    stat: 'Early-mover',
+    statLabel: 'almost no clinics do this yet',
+    preview: GEOPreview,
   },
   {
     tab: 'Reporting',

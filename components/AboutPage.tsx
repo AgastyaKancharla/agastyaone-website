@@ -13,7 +13,6 @@ const BELIEFS = [
 
 const STATS = [
   { value: '1', label: 'Dental CRM built from scratch', color: '#E86C2F' },
-  { value: '8+', label: 'Clinic websites built and tested', color: '#6366f1' },
   { value: '5', label: 'Bengaluru neighbourhoods active', color: '#34d399' },
   { value: '100%', label: 'Dental focused — no generalist work', color: '#f59e0b' },
 ];

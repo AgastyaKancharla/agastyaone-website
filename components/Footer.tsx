@@ -17,7 +17,6 @@ const solutions = [
   { label: 'Dental Websites', href: '/dental-website-development', desc: 'Convert visitors to bookings', icon: '🌐' },
   { label: 'Dental SEO', href: '/dental-seo-services', desc: 'Rank #1 in your area', icon: '📈' },
   { label: 'Appointment Software', href: '/dentist-appointment-software', desc: 'Zero no-shows', icon: '📅' },
-  { label: 'Dental Marketing', href: '/dental-marketing-services', desc: 'Ads that bring real patients', icon: '📣' },
   { label: 'Practice Automation', href: '/dental-practice-automation', desc: 'Run your clinic on autopilot', icon: '⚙️' },
 ];
 

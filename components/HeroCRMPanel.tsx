@@ -138,7 +138,7 @@ function CRMPanel({ active, light = false }: { active: boolean; light?: boolean 
       </div>
       {/* stat strip */}
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', borderTop: T.statBorder, background: T.statBg }}>
-        {[['500+','Patients','#34d399'],[String(reviews),'Reviews','#f59e0b'],['3x','Bookings','#E86C2F']].map(([v,l,c],i) => (
+        {[['Managed','Patients','#34d399'],['Automated','Reviews','#f59e0b'],['Fewer calls','Bookings','#E86C2F']].map(([v,l,c],i) => (
           <div key={l} style={{ padding: '9px 6px', textAlign: 'center', borderRight: i < 2 ? T.statBorder : 'none' }}>
             <div style={{ color: c, fontFamily: 'Poppins,sans-serif', fontWeight: 800, fontSize: 15, transition: 'all .4s' }}>{v}</div>
             <div style={{ color: T.statLabel, fontSize: 8.5, marginTop: 1, fontWeight: 500, textTransform: 'uppercase', letterSpacing: '0.05em' }}>{l}</div>

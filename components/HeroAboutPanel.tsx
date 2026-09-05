@@ -18,7 +18,7 @@ const TIMELINE = [
   {
     year: '2024',
     color: '#10B981',
-    title: 'Spoke to 23+ clinic owners',
+    title: 'Spoke with real clinic owners',
     body: 'Across Koramangala, Indiranagar, HSR Layout, Jayanagar and Whitefield — before writing a single line of product code.',
   },
   {
@@ -30,9 +30,7 @@ const TIMELINE = [
 ];
 
 const STATS = [
-  { number: '23+', label: 'Clinic owners spoken to before launch' },
   { number: '0', label: 'Templates used — every build is custom' },
-  { number: '2', label: 'Dental websites live in Bengaluru' },
   { number: '6 mo', label: 'Learning clinic ops before building' },
   { number: '1', label: 'Person you always speak to — Agastya' },
   { number: '100%', label: 'Dental focused — we do nothing else' },
