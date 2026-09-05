@@ -32,7 +32,7 @@ const FEATURES = [
   {
     id: 'recall',
     icon: '🔁', title: 'Recall System', tag: 'Revenue', tagColor: '#34d399',
-    stat: '₹3.7L', statLabel: 'recovered per year',
+    stat: '₹3.7L', statLabel: 'est. recoverable/year',
     pitch: 'Patients due for checkup get recalled automatically.',
   },
   {

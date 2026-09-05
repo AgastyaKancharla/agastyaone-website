@@ -24,7 +24,6 @@ const dentalOffers = [
   ['Dental Website Development', '/dental-website-development', 'A website that builds trust and converts visitors into booked patients'],
   ['Dental SEO Services', '/dental-seo-services', 'Rank on Google when patients search for a dentist near them'],
   ['Dentist Appointment Software', '/dentist-appointment-software', 'Fill appointment slots automatically with zero manual follow-up'],
-  ['Dental Marketing Services', '/dental-marketing-services', 'Reach new patients in your neighbourhood with targeted digital marketing'],
   ['Dental Practice Automation', '/dental-practice-automation', 'Automate reminders, follow-ups and reviews']
 ];
 
@@ -88,7 +87,9 @@ const featureDescriptions: Record<string, string> = {
   'Competitor Analysis':
     'We study nearby clinics to see who ranks, why they rank and where your opportunity sits. This gives your SEO plan a practical local target.',
   'Local Citations':
-    'Consistent business details across directories help Google trust your location and contact information. We fix mismatches and build the citations that matter locally.',
+    'Consistent business details across directories — Practo, JustDial, Sulekha, IndiaMART and more — help Google trust your location and contact information. We fix mismatches and build the citations that matter locally.',
+  'AI Search Visibility (GEO)':
+    'Patients are starting to ask ChatGPT, Gemini and Perplexity for a dentist nearby instead of just Googling it. We structure your website, Google Business Profile and reviews so AI answer engines can find and recommend your clinic — an early-mover advantage since almost no dental clinics are optimised for this yet.',
   'Monthly Reporting':
     'You get clear monthly updates on rankings, traffic, calls, reviews and next actions. Reports focus on business impact, not vanity charts.',
   'Online Appointment Booking':
@@ -146,7 +147,21 @@ const featureDescriptions: Record<string, string> = {
   'Review Management':
     'Ask happy patients for reviews at the right moment and track your review growth over time. Stronger reviews improve trust before a new patient ever walks in.',
   'Simple Dashboard':
-    'Track patient retention, campaign performance, reviews and recall activity in one clean dashboard. Owners get the numbers they need without opening five different tools.'
+    'Track patient retention, campaign performance, reviews and recall activity in one clean dashboard. Owners get the numbers they need without opening five different tools.',
+  'AI Receptionist':
+    'Books, reschedules and answers common patient questions on your website chat — and WhatsApp, once that\'s set up. It holds a real conversation, not just a static form, and hands off to your staff when a question needs a human.',
+  'WhatsApp Automation':
+    'Appointment confirmations, reminders and broadcast messages sent automatically over WhatsApp — the channel patients already check, so nothing depends on someone remembering to send it.',
+  'Missed-Call Text-Back':
+    'Anyone whose call goes unanswered gets an automatic text within seconds, so an enquiry never goes cold just because the phone wasn\'t picked up in time.',
+  'Unified Inbox':
+    'Every channel — WhatsApp, website chat, missed calls — lands in one screen for your staff, instead of scattered across separate apps and notebooks.',
+  'Recall & Reactivation':
+    'Automatic 6-month checkup reminders and win-back messages for patients who have gone quiet, so your clinic keeps the patients it already has instead of losing them silently.',
+  'Post-Treatment Follow-Up':
+    'Automatic care instructions and check-in messages after a procedure, so patients feel looked after without your team having to remember to call.',
+  'Review Automation':
+    'Automatically requests a Google review after a visit, and drafts AI-suggested replies to incoming reviews so your team can respond quickly and consistently.'
 };
 
 function featureCards(items: string[]): TextBlock[] {
@@ -184,8 +199,8 @@ export const homePage = page(
   '',
   'AgastyaOne | Practice Growth Systems for Dental Clinics in Bengaluru',
   'AgastyaOne builds the booking system, Google visibility, and WhatsApp follow-up that fills a dental chair — built exclusively for dental clinics in Bengaluru (Bangalore). Proven on a real clinic. Book a free audit call.',
-  'Practice Growth Systems for Bengaluru Dental Clinics — Get Found, Get Booked, Get Them Back',
-  'Websites, CRM software, automation and SEO — built by someone who has built real dental systems, not just read about them',
+  'Grow Your Dental Practice. Automate the Rest.',
+  'CRM, SEO & AI Booking Systems for Clinics of Every Size.',
   {
     secondaryLabel: 'See Our Work',
     trust: [],
@@ -326,14 +341,14 @@ export const pages: SitePage[] = [
     parent: '/dental-solutions',
     intro: [{ title: 'Patients Are Searching For a Dentist in Your Neighbourhood Right Now', body: 'If your clinic does not appear when patients search Google, your competitor gets that patient every single day.' }, { title: 'Results Timeline', items: ['Month 1: Foundations', 'Month 2-3: Rankings improve', 'Month 4-6: Consistent top positions', 'Month 6+: Compounding results'] }],
     offerTitle: 'What We Do',
-    offers: featureCards(['Google Business Profile Optimisation', 'Local Keyword Research', 'Treatment Page Optimisation', 'Review Generation Strategy', 'Local Citations', 'Competitor Analysis', 'Monthly Reporting']),
-    faq: [{ q: 'My clinic is already on Practo. Do I still need SEO?', a: 'Absolutely. Practo is rented visibility. Google ranking is an asset you own.' }, { q: 'Long term contract?', a: 'No. Monthly plans only.' }],
+    offers: featureCards(['Google Business Profile Optimisation', 'Local Keyword Research', 'Treatment Page Optimisation', 'Review Generation Strategy', 'Local Citations', 'AI Search Visibility (GEO)', 'Competitor Analysis', 'Monthly Reporting']),
+    faq: [{ q: 'My clinic is already on Practo. Do I still need SEO?', a: 'Absolutely. Practo is rented visibility. Google ranking is an asset you own.' }, { q: 'Long term contract?', a: 'No. Monthly plans only.' }, { q: 'What is GEO / AI search visibility?', a: 'Patients are starting to ask AI tools like ChatGPT, Gemini and Perplexity for a dentist nearby instead of just Googling it. GEO structures your online presence so those tools can find and recommend your clinic. Almost no dental clinics are doing this yet — it\'s an early-mover advantage while it lasts.' }],
     internalLinks: [{ label: 'Dental Solutions', href: '/dental-solutions' }, { label: 'Dental SEO Bangalore', href: '/dental-seo-bangalore' }, { label: 'Dental Solutions Bangalore', href: '/dental-solutions-bangalore' }]
   }),
   page('dentist-appointment-software', 'Dentist Appointment Software in Bangalore | AgastyaOne', 'Dentist appointment software for Bengaluru clinics. Automate bookings, WhatsApp reminders and reduce no-shows. Built for Indian dental practices.', 'Dentist Appointment Software That Fills Your Schedule and Eliminates No-Shows in Bengaluru', 'Automate your appointment bookings, reminders and follow-ups so your reception team spends less time on the phone and more time with patients', {
     primaryLabel: 'Book a Free Demo',
     parent: '/dental-solutions',
-    intro: [{ title: 'Empty Appointment Slots and No-Shows Are Costing Your Clinic Real Money Every Day', body: 'The average dental clinic in Bengaluru loses 15 to 20% of appointment revenue to no-shows and last minute cancellations every month.' }, { title: 'The Numbers', body: 'A clinic with 20 appointments per day losing 15% to no-shows can lose Rs 90,000 per month from patients who intended to come but were not reminded.' }],
+    intro: [{ title: 'Empty Appointment Slots and No-Shows Are Costing Your Clinic Real Money Every Day', body: 'The average dental clinic in Bengaluru loses 15 to 20% of appointment revenue to no-shows and last minute cancellations every month.' }, { title: 'The Numbers', body: 'A clinic with 20 appointments per day losing 15% to no-shows can lose Rs 90,000 per month from patients who intended to come but were not reminded.' }, { title: 'Every Booking Lands Where Your Team Already Works', body: 'This isn\'t just a booking form — it\'s booking capture and routing. Requests from your website, and WhatsApp once that\'s live, are captured and land automatically in your clinic\'s CRM or a shared Sheet. Nothing gets manually copied out of a message into a register.' }],
     offerTitle: 'What You Get',
     offers: featureCards(['Online Appointment Booking', 'Automatic WhatsApp Reminders', 'Appointment Confirmation', 'Cancellation and Rescheduling', 'Waitlist Management', 'Post Appointment Follow-up', 'Appointment Dashboard']),
     faq: [
@@ -346,38 +361,13 @@ export const pages: SitePage[] = [
     ],
     internalLinks: [{ label: 'Dental Solutions', href: '/dental-solutions' }, { label: 'Dental Practice Automation', href: '/dental-practice-automation' }]
   }),
-  page('dental-marketing-services', 'Dental Marketing Services in Bangalore | AgastyaOne', 'Dental marketing services for clinics in Bengaluru. SEO, Google reviews, WhatsApp marketing and online reputation management for dental practices.', 'Dental Marketing Services in Bengaluru That Bring New Patients to Your Clinic Every Month', 'A complete digital marketing system for dental clinics — SEO, WhatsApp, Google reviews and online presence — built to grow your patient base consistently and affordably', {
-    primaryLabel: 'Book a Free Consultation',
-    secondaryLabel: 'See What We Do',
-    parent: '/dental-solutions',
-    intro: [
-      { title: 'Word of Mouth Is Not a Growth Strategy', body: 'Referrals are great when they come. But you cannot predict them, scale them or turn them on when you need more patients. You need a system that brings new patients consistently — every month, whether or not someone recommends you.' },
-      { title: 'Who This Is For', items: ['You rely mainly on word of mouth and walk-ins', 'Your Google Business Profile has fewer than 50 reviews', 'Your website exists but gets no traffic', 'You want to grow without spending a fortune on paid ads', 'You have tried agencies before and felt nothing changed'] }
-    ],
-    offerTitle: 'What We Do',
-    offers: featureCards(['Google Business Profile Management', 'Google Review Generation', 'Local SEO', 'WhatsApp Marketing', 'Online Reputation Management', 'Monthly Strategy and Reporting']),
-    steps: [
-      'Free Audit — We review your current Google presence, reviews and website in 30 minutes',
-      'We Build Your Plan — A clear monthly action plan specific to your clinic and neighbourhood',
-      'We Execute Every Month — GBP updates, review campaigns, SEO work, WhatsApp campaigns',
-      'You See the Numbers — Monthly report showing what changed and what we do next'
-    ],
-    faq: [
-      { q: 'Do I need a big budget for paid ads?', a: 'No. Most of what we do requires zero ad spend — GBP, SEO, reviews and WhatsApp are all organic.' },
-      { q: 'Can you help a brand new clinic with no reviews?', a: 'Absolutely. Starting from zero is often easier — no bad habits to undo. We build the foundation correctly from day one.' },
-      { q: 'I tried an agency before and saw no results. Why would this be different?', a: 'Most agencies report on vanity metrics — impressions, reach, clicks. We report on patient enquiries, calls and appointments. If those numbers do not grow, we have not done our job.' },
-      { q: 'How long before I see results?', a: 'Google Business Profile improvements show in 30 to 60 days. SEO builds over 3 to 6 months. Review growth is visible within the first month.' },
-      { q: 'Do I need to sign a long contract?', a: 'No. Monthly plans only. We earn your business every month.' }
-    ],
-    internalLinks: [{ label: 'Dental Solutions', href: '/dental-solutions' }, { label: 'Dental SEO Services', href: '/dental-seo-services' }]
-  }),
-  page('dental-practice-automation', 'Dental Practice Automation in Bangalore | AgastyaOne', 'Dental practice automation for clinics in Bengaluru. Automate appointment reminders, patient follow-ups, review requests and recall systems on WhatsApp.', 'Dental Practice Automation That Removes the Manual Work From Running Your Clinic in Bengaluru', 'Automate patient reminders, follow-ups, review requests and recall systems — so your team focuses on patients not paperwork', {
+  page('dental-practice-automation', 'Dental Practice Automation in Bangalore | AgastyaOne', 'Dental practice automation for clinics in Bengaluru. AI receptionist, WhatsApp automation, missed-call text-back, unified inbox, recall and review automation.', 'Dental Practice Automation That Removes the Manual Work From Running Your Clinic in Bengaluru', 'An AI receptionist, WhatsApp automation and a unified inbox that handle enquiries, reminders, recalls and reviews — so your team focuses on patients, not paperwork', {
     primaryLabel: 'Book a Free Demo',
     parent: '/dental-solutions',
-    intro: [{ title: 'Your Team Is Spending Hours Every Day on Work That Should Happen Automatically', body: 'Calling patients, following up enquiries, reminding checkups and asking for Google reviews can all be automated.' }, { title: 'The Impact', items: ['Before: receptionist spends 2 hours daily on manual calls', 'After: zero manual reminder calls', 'No-show rate drops 50-70%', 'Reviews grow consistently every month'] }],
+    intro: [{ title: 'Your Team Is Spending Hours Every Day on Work That Should Happen Automatically', body: 'Calling patients, following up enquiries, reminding checkups and asking for Google reviews can all be automated.' }, { title: 'The Impact', items: ['Before: receptionist spends hours daily on manual calls', 'After: zero manual reminder calls', 'Fewer no-shows with automatic confirmations', 'Reviews grow consistently every month'] }],
     offerTitle: 'What We Automate',
-    offers: featureCards(['Appointment Reminders', 'Treatment Follow-ups', 'Patient Recall System', 'Google Review Requests', 'Missed Appointment Recovery', 'New Patient Welcome', 'Birthday Messages', 'Treatment Plan Follow-up']),
-    faq: [{ q: 'Will automated messages feel impersonal?', a: 'Done correctly, no. Messages use patient name and context.' }, { q: 'Can I customise the messages?', a: 'Yes completely. You approve everything before it goes live.' }],
+    offers: featureCards(['AI Receptionist', 'WhatsApp Automation', 'Missed-Call Text-Back', 'Unified Inbox', 'Recall & Reactivation', 'Post-Treatment Follow-Up', 'Review Automation']),
+    faq: [{ q: 'Will automated messages feel impersonal?', a: 'Done correctly, no. Messages use patient name and context.' }, { q: 'Can I customise the messages?', a: 'Yes completely. You approve everything before it goes live.' }, { q: 'Does the AI receptionist replace my front desk?', a: 'No — it handles the overflow: after-hours enquiries, simple bookings and repeat questions, so your team isn\'t interrupted for every one of them. Anything it can\'t resolve gets handed to your staff.' }],
     internalLinks: [{ label: 'Dental Solutions', href: '/dental-solutions' }, { label: 'Dentist Appointment Software', href: '/dentist-appointment-software' }]
   }),
   page('dental-solutions-bangalore', 'Dental Digital Solutions in Bangalore | AgastyaOne', 'Complete digital solutions for dental clinics in Bangalore. Websites, CRM, SEO and practice automation for clinics across Koramangala, Indiranagar, Jayanagar and HSR Layout.', 'Complete Digital Solutions For Dental Clinics in Bangalore That Want to Grow Their Patient Base', 'Websites, CRM, SEO, appointment software and practice automation — built specifically for dental clinics across Koramangala, Indiranagar, Jayanagar, HSR Layout and Whitefield', {

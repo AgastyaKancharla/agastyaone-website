@@ -53,7 +53,6 @@ function heroEyebrow(slug: string) {
     'dental-website-development': '🌐 Websites That Convert',
     'dental-seo-services': '🔍 Get Found on Google',
     'dentist-appointment-software': '📅 Smart Scheduling',
-    'dental-marketing-services': '📣 Patient Growth',
     'dental-practice-automation': '⚡ Less Manual Work',
     'dental-solutions': '🦷 Full Solutions Suite',
     'dental-solutions-bangalore': '🦷 Bangalore Clinics',
@@ -147,14 +146,11 @@ export function Hero({
           className="font-heading font-black leading-tight tracking-tight text-[#1A1A2E]"
           style={{ fontSize: 'clamp(1.75rem, 8vw, 4.5rem)' }}
         >
-          We Help Bengaluru{' '}
+          Grow Your Dental Practice.
+          <br />
           <span className="bg-gradient-to-r from-[#E86C2F] to-[#f59e0b] bg-clip-text text-transparent">
-            Dental Clinics
+            Automate the Rest.
           </span>
-          <br />
-          Rank Higher, Get More Reviews
-          <br />
-          &amp; Book More Patients
         </h1>
       );
     }
@@ -191,7 +187,7 @@ export function Hero({
   return (
     <section className="full-bleed overflow-hidden bg-gradient-to-br from-[#F8F6F3] to-white">
       <div className="dot-grid absolute inset-0 opacity-70" aria-hidden="true" />
-      <div className={"site-container relative grid items-center gap-8 py-10 md:py-16 lg:py-20 " + (showCRM || ['dental-website-development','dental-seo-services','dentist-appointment-software','dental-marketing-services','dental-practice-automation'].includes(slug) ? "lg:grid-cols-[1fr_.95fr]" : "lg:grid-cols-[1.05fr_.95fr]")}>
+      <div className={"site-container relative grid items-center gap-8 py-10 md:py-16 lg:py-20 " + (showCRM || ['dental-website-development','dental-seo-services','dentist-appointment-software','dental-practice-automation'].includes(slug) ? "lg:grid-cols-[1fr_.95fr]" : "lg:grid-cols-[1.05fr_.95fr]")}>
         <div>
           <p className="mb-4 inline-flex items-center rounded-full bg-orange-100 px-4 py-1 text-sm font-medium text-orange-700">
             {slug === '' ? '✨ Bengaluru growth systems' : heroEyebrow(slug)}
@@ -209,11 +205,6 @@ export function Hero({
           {!showCRM && slug === 'dental-seo-services' && (
             <div className="my-8 lg:hidden" style={{ minHeight: 420 }}>
               <SEOHeroPanel />
-            </div>
-          )}
-          {!showCRM && slug === 'dental-marketing-services' && (
-            <div className="my-8 lg:hidden" style={{ minHeight: 420 }}>
-              <MarketingHeroPanel />
             </div>
           )}
           {showWebsitePanel && (
@@ -254,12 +245,6 @@ export function Hero({
           </Reveal>
         )}
 
-        {!showCRM && slug === 'dental-marketing-services' && (
-          <Reveal delay={160} className="hidden lg:block">
-            <MarketingHeroPanel />
-          </Reveal>
-        )}
-
         {showWebsitePanel && (
           <Reveal delay={160} className="hidden lg:block">
             <HeroDentalWebsitePanelClient />
@@ -277,7 +262,7 @@ export function Hero({
           </Reveal>
         )}
 
-        {!showCRM && !showWebsitePanel && !showAboutPanel && slug !== 'dental-seo-services' && slug !== 'dentist-appointment-software' && slug !== 'dental-marketing-services' && (
+        {!showCRM && !showWebsitePanel && !showAboutPanel && slug !== 'dental-seo-services' && slug !== 'dentist-appointment-software' && (
           <Reveal delay={160}>
             <DashboardHeroPanel alt={imageAlt} />
           </Reveal>
@@ -439,133 +424,12 @@ function SEOHeroPanel() {
   );
 }
 
-function MarketingHeroPanel() {
-  const [step, setStep] = React.useState(0);
-  const [reviews, setReviews] = React.useState(12);
-  const [enquiries, setEnquiries] = React.useState(3);
-  const [rank, setRank] = React.useState(9);
-
-  React.useEffect(() => {
-    const timers = [
-      setTimeout(() => { setStep(1); setRank(6); }, 900),
-      setTimeout(() => { setStep(2); setReviews(r => r + 8); setEnquiries(e => e + 4); }, 2000),
-      setTimeout(() => { setStep(3); setRank(3); setReviews(r => r + 12); }, 3200),
-      setTimeout(() => { setStep(4); setEnquiries(e => e + 9); }, 4200),
-      setTimeout(() => { setStep(5); setRank(1); setReviews(r => r + 15); setEnquiries(e => e + 11); }, 5400),
-    ];
-    return () => timers.forEach(clearTimeout);
-  }, []);
-
-  const channels = [
-    { label: 'Google Business', done: step >= 1, color: '#4285F4' },
-    { label: 'WhatsApp Marketing', done: step >= 2, color: '#25D366' },
-    { label: 'Local SEO', done: step >= 3, color: '#E86C2F' },
-    { label: 'Review Generation', done: step >= 4, color: '#F59E0B' },
-    { label: 'Online Reputation', done: step >= 5, color: '#8B5CF6' },
-  ];
-
-  return (
-    <div style={{
-      background: '#fff',
-      borderRadius: 20,
-      border: '1.5px solid #E5E7EB',
-      boxShadow: '0 20px 60px rgba(26,26,46,0.10)',
-      overflow: 'hidden',
-      fontFamily: 'Inter, system-ui, sans-serif',
-      maxWidth: 380,
-    }}>
-      {/* Title bar */}
-      <div style={{ background: '#1A1A2E', padding: '12px 16px', display: 'flex', alignItems: 'center', gap: 10 }}>
-        <div style={{ display: 'flex', gap: 5 }}>
-          {['#ff5f57', '#ffbd2e', '#28c840'].map(c => (
-            <div key={c} style={{ width: 10, height: 10, borderRadius: '50%', background: c }} />
-          ))}
-        </div>
-        <div style={{ flex: 1, background: 'rgba(255,255,255,0.08)', borderRadius: 6, padding: '4px 10px', fontSize: 11, color: 'rgba(255,255,255,0.5)', textAlign: 'center' }}>
-          AgastyaOne · Marketing Dashboard
-        </div>
-      </div>
-
-      <div style={{ padding: 16, display: 'flex', flexDirection: 'column', gap: 12 }}>
-
-        {/* Live stats row */}
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: 8 }}>
-          {[
-            { label: 'Google Rank', value: `#${rank}`, trend: rank <= 3 ? '↑' : '', color: rank <= 3 ? '#22c55e' : '#9CA3AF' },
-            { label: 'Reviews', value: reviews, trend: step >= 2 ? '+' : '', color: '#F59E0B' },
-            { label: 'Enquiries/mo', value: enquiries, trend: step >= 2 ? '↑' : '', color: '#E86C2F' },
-          ].map(({ label, value, trend, color }) => (
-            <div key={label} style={{ background: '#F9FAFB', borderRadius: 10, padding: '10px 8px', textAlign: 'center', border: '1px solid #F0F0F0' }}>
-              <div style={{ fontSize: 16, fontWeight: 800, color, transition: 'color 0.4s ease' }}>
-                {trend}{value}
-              </div>
-              <div style={{ fontSize: 9, color: '#9CA3AF', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.05em', marginTop: 2 }}>{label}</div>
-            </div>
-          ))}
-        </div>
-
-        <div style={{ height: 1, background: '#F0F0F0' }} />
-
-        {/* Channel activation */}
-        <div>
-          <div style={{ fontSize: 11, fontWeight: 700, color: '#9CA3AF', letterSpacing: '0.06em', textTransform: 'uppercase', marginBottom: 8 }}>
-            📣 Marketing channels activating
-          </div>
-          <div style={{ display: 'flex', flexDirection: 'column', gap: 7 }}>
-            {channels.map(ch => (
-              <div key={ch.label} style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
-                <div style={{
-                  width: 8, height: 8, borderRadius: '50%', flexShrink: 0,
-                  background: ch.done ? ch.color : '#E5E7EB',
-                  boxShadow: ch.done ? `0 0 6px ${ch.color}80` : 'none',
-                  transition: 'all 0.5s ease',
-                }} />
-                <div style={{ flex: 1, height: 6, background: '#F3F4F6', borderRadius: 99, overflow: 'hidden' }}>
-                  <div style={{
-                    height: '100%',
-                    background: ch.color,
-                    width: ch.done ? '100%' : '0%',
-                    borderRadius: 99,
-                    transition: 'width 0.8s ease',
-                    opacity: ch.done ? 1 : 0,
-                  }} />
-                </div>
-                <span style={{ fontSize: 10, color: ch.done ? '#1A1A2E' : '#D1D5DB', fontWeight: ch.done ? 600 : 400, transition: 'color 0.4s ease', whiteSpace: 'nowrap' }}>
-                  {ch.label}
-                </span>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Result badge */}
-        {step >= 5 && (
-          <div style={{
-            background: 'linear-gradient(135deg, #1A1A2E, #2d3561)',
-            borderRadius: 12, padding: '12px 16px',
-            display: 'flex', alignItems: 'center', justifyContent: 'space-between',
-            animation: 'fadeUp 0.4s ease',
-          }}>
-            <div>
-              <div style={{ fontSize: 10, color: 'rgba(255,255,255,0.5)', marginBottom: 2 }}>This month</div>
-              <div style={{ fontFamily: 'Poppins, sans-serif', fontSize: 16, fontWeight: 800, color: '#E86C2F' }}>
-                {enquiries} new patients
-              </div>
-              <div style={{ fontSize: 10, color: 'rgba(255,255,255,0.4)', marginTop: 2 }}>from digital marketing alone</div>
-            </div>
-            <div style={{ fontSize: 28 }}>🚀</div>
-          </div>
-        )}
-      </div>
-    </div>
-  );
-}
 
 function DashboardHeroPanel({ alt }: { alt: string }) {
   const stats: Array<[string, string, LucideIcon]> = [
-    ['500+', 'Patients Managed', CheckCircle],
-    ['47', 'Google Reviews', Star],
-    ['3x', 'More Bookings', Zap]
+    ['Patients', 'Managed in one place', CheckCircle],
+    ['Reviews', 'Requested automatically', Star],
+    ['Bookings', 'Fewer manual follow-ups', Zap]
   ];
 
   return (
@@ -1179,47 +1043,18 @@ export function ContactStrip() {
               Are you the one they&rsquo;re finding?
             </p>
 
-            {/* Inline stats */}
-            <div
+            {/* Honesty line — no inflated numbers */}
+            <p
               style={{
-                display: 'flex',
-                gap: '2rem',
                 marginTop: '1.5rem',
-                flexWrap: 'wrap',
+                fontSize: '0.85rem',
+                fontWeight: 700,
+                letterSpacing: '0.02em',
+                color: 'rgba(255,255,255,0.75)',
               }}
             >
-              {[
-                { num: '11+', label: 'clinics served' },
-                { num: '34', label: 'avg new patients/mo' },
-                { num: '4.8★', label: 'avg Google rating' },
-              ].map(({ num, label }) => (
-                <div key={label}>
-                  <span
-                    style={{
-                      display: 'block',
-                      fontFamily: 'Poppins, sans-serif',
-                      fontSize: '1.5rem',
-                      fontWeight: 800,
-                      color: '#fff',
-                      lineHeight: 1,
-                    }}
-                  >
-                    {num}
-                  </span>
-                  <span
-                    style={{
-                      fontSize: '0.72rem',
-                      fontWeight: 600,
-                      textTransform: 'uppercase',
-                      letterSpacing: '0.08em',
-                      color: 'rgba(255,255,255,0.5)',
-                    }}
-                  >
-                    {label}
-                  </span>
-                </div>
-              ))}
-            </div>
+              Real clinics. Real systems. No inflated numbers.
+            </p>
           </Reveal>
 
           {/* Buttons */}
@@ -1228,22 +1063,6 @@ export function ContactStrip() {
               <Button href="/contact" variant="yellow">
                 Book Your Free Call
               </Button>
-              <a
-                href="#testimonials"
-                className="inline-flex min-h-12 items-center justify-center rounded-full px-7 py-3 text-sm font-semibold text-white transition"
-                style={{
-                  background: '#1a1a2e',
-                  border: '2px solid rgba(255,255,255,0.12)',
-                }}
-                onMouseEnter={(e) => {
-                  (e.currentTarget as HTMLAnchorElement).style.background = '#242442';
-                }}
-                onMouseLeave={(e) => {
-                  (e.currentTarget as HTMLAnchorElement).style.background = '#1a1a2e';
-                }}
-              >
-                Talk to a Past Client
-              </a>
             </div>
           </Reveal>
         </div>

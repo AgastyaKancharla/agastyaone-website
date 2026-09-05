@@ -8,10 +8,10 @@ import { ArrowRight, MapPin, Search, ChevronDown } from 'lucide-react';
 
 export function SEOProofStrip() {
   const stats = [
-    { icon: '📍', value: '5+',  label: 'Bengaluru neighbourhoods ranked' },
-    { icon: '⭐', value: '50+', label: 'Reviews generated for clients'   },
-    { icon: '📈', value: '3×',  label: 'Average traffic increase'        },
-    { icon: '🏆', value: '#1',  label: 'Maps positions achieved'         },
+    { icon: '🦷', value: 'Dental-only', label: 'We work exclusively with dental clinics' },
+    { icon: '📍', value: 'Local-first', label: 'Built around your specific neighbourhood' },
+    { icon: '📅', value: 'Monthly',     label: 'Ranking reports, every month'              },
+    { icon: '🔓', value: 'No lock-in',  label: 'Month to month — cancel any time'          },
   ];
   return (
     <div style={{ background: '#1A1A2E', padding: '40px 0', fontFamily: 'Inter, system-ui, sans-serif' }}>
@@ -160,7 +160,7 @@ export function TwoTrackSection() {
 const MONTHS = [
   { month: 'Month 1',   label: 'Foundations',       color: '#E86C2F', items: ['GBP fully optimised and verified', 'Categories, photos, services all added', 'Local keyword map built for your area', 'Treatment pages drafted and published', 'Review request system activated'] },
   { month: 'Month 2–3', label: 'Rankings Move',      color: '#F59E0B', items: ['Maps position actively improving', 'First page 1 keywords appearing in Search', 'Review count growing weekly automatically', 'Citations submitted to directories', 'First ranking report delivered'] },
-  { month: 'Month 4–6', label: 'Consistent Top 3',   color: '#22C55E', items: ['Stable top-3 Maps position in your area', 'Multiple page 1 treatment keywords', 'Organic calls and bookings increasing', 'Monthly content updates keeping rankings', 'Competitor gap closed significantly'] },
+  { month: 'Month 4–6', label: 'Rankings Stabilise',   color: '#22C55E', items: ['Rankings hold steady in your neighbourhood', 'Multiple page 1 treatment keywords', 'Organic calls and bookings increasing', 'Monthly content updates keeping rankings', 'Competitor gap closed significantly'] },
   { month: 'Month 6+',  label: 'Compounding Growth', color: '#3B82F6', items: ['Rankings self-reinforce and hold', 'New patients arrive organically daily', 'Reviews create lasting trust advantage', 'Expanding to new treatment keywords', 'Results compound — zero extra ad spend'] },
 ];
 
@@ -258,7 +258,7 @@ const SEO_FAQS = [
   },
   {
     q: "Is there a long-term contract?",
-    a: "No. Monthly plans only, cancel any time. We don't lock you in because we don't need to — the results speak for themselves. Most clients stay because the organic calls keep coming, not because a contract forces them to.",
+    a: "No. Monthly plans only, cancel any time. We don't lock you in because we don't need to — we'd rather earn it every month. The idea is that the organic calls keep coming on their own, not because a contract forces you to stay.",
   },
 ];
 
