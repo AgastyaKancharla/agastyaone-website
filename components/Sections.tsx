@@ -146,14 +146,11 @@ export function Hero({
           className="font-heading font-black leading-tight tracking-tight text-[#1A1A2E]"
           style={{ fontSize: 'clamp(1.75rem, 8vw, 4.5rem)' }}
         >
-          We Help Bengaluru{' '}
+          Grow Your Dental Practice.
+          <br />
           <span className="bg-gradient-to-r from-[#E86C2F] to-[#f59e0b] bg-clip-text text-transparent">
-            Dental Clinics
+            Automate the Rest.
           </span>
-          <br />
-          Rank Higher, Get More Reviews
-          <br />
-          &amp; Book More Patients
         </h1>
       );
     }
