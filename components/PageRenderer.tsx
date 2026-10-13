@@ -1,5 +1,6 @@
 import dynamic from 'next/dynamic';
 import { CardGrid, ContactStrip, FAQ, Hero, Section, Steps, TextSections, TrustBar } from './Sections';
+import { ParallaxComponent } from './ui/parallax-scrolling';
 import { faqSchemaForPage, getLocationContent, type SitePage } from '@/lib/site-data';
 
 // Heavy, page-specific components — loaded only when the relevant page renders
@@ -31,16 +32,26 @@ export function PageRenderer({ page, schema = false }: { page: SitePage; schema?
   return (
     <>
       {faqSchema && <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />}
-      <Hero
-        title={page.h1}
-        subtitle={page.subtitle}
-        ctas={ctas}
-        imageAlt={`${page.h1} dashboard illustration`}
-        showCRM={page.slug === '' || page.slug === 'dental-solutions' || page.slug === 'dental-crm-software'}
-        showWebsitePanel={page.slug === 'dental-website-development'}
-        showAboutPanel={page.slug === 'about'}
-        slug={page.slug}
-      />
+      {page.slug === '' ? (
+        <ParallaxComponent
+          eyebrow="✨ Bengaluru growth systems"
+          title={page.h1}
+          subtitle={page.subtitle}
+          primaryCta={ctas[0]}
+          secondaryCta={ctas[1]}
+        />
+      ) : (
+        <Hero
+          title={page.h1}
+          subtitle={page.subtitle}
+          ctas={ctas}
+          imageAlt={`${page.h1} dashboard illustration`}
+          showCRM={page.slug === 'dental-solutions' || page.slug === 'dental-crm-software'}
+          showWebsitePanel={page.slug === 'dental-website-development'}
+          showAboutPanel={page.slug === 'about'}
+          slug={page.slug}
+        />
+      )}
       {page.trust && page.trust.length > 0 && <TrustBar items={page.trust} />}
 
       {/* About page — completely custom, skip all generic sections */}
