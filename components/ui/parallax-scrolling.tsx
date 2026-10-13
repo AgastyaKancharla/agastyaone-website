@@ -1,10 +1,11 @@
 'use client';
 
 import React, { useEffect, useRef } from 'react';
+import Image from 'next/image';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Lenis from 'lenis';
-import { CalendarCheck, ChevronDown } from 'lucide-react';
+import { ChevronDown } from 'lucide-react';
 import { Button } from '@/components/Button';
 
 export type ParallaxHeroProps = {
@@ -36,10 +37,8 @@ export function ParallaxComponent({ eyebrow, title, subtitle, primaryCta, second
       });
 
       const layers = [
-        { layer: '1', yPercent: 70 },
-        { layer: '2', yPercent: 55 },
-        { layer: '3', yPercent: 40 },
-        { layer: '4', yPercent: 10 }
+        { layer: '1', yPercent: 45 },
+        { layer: '2', yPercent: 8 }
       ];
 
       layers.forEach((layerObj, idx) => {
@@ -72,72 +71,68 @@ export function ParallaxComponent({ eyebrow, title, subtitle, primaryCta, second
 
   return (
     <div ref={parallaxRef} className="relative">
-      <section className="full-bleed relative isolate overflow-hidden bg-gradient-to-br from-[#F8F6F3] to-white">
+      <section className="full-bleed relative isolate overflow-hidden bg-[#0b0f19]">
         <div data-parallax-layers className="relative h-[100svh] min-h-[600px] w-full">
-          {/* Layer 1 — farthest back, moves the most: soft brand-colored glow */}
-          <div data-parallax-layer="1" className="absolute inset-0 flex items-center justify-center" aria-hidden="true">
-            <div className="h-[70vmin] w-[70vmin] rounded-full bg-gradient-to-br from-[#E86C2F]/25 via-[#f59e0b]/15 to-transparent blur-3xl" />
+          {/* Layer 1 — the scene, moves away fastest as you scroll */}
+          <div data-parallax-layer="1" className="absolute inset-0" aria-hidden="true">
+            <Image
+              src="/hero-parallax.webp"
+              alt=""
+              fill
+              priority
+              sizes="100vw"
+              className="object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/5 to-black/10" />
           </div>
 
-          {/* Layer 2 — dot-grid texture */}
-          <div data-parallax-layer="2" className="dot-grid absolute inset-0 opacity-40" aria-hidden="true" />
-
-          {/* Layer 3 — headline, subtitle and CTAs */}
+          {/* Layer 2 — title, stays nearly pinned while the scene recedes */}
           <div
-            data-parallax-layer="3"
-            className="site-container absolute inset-0 flex flex-col items-center justify-center text-center"
+            data-parallax-layer="2"
+            className="absolute inset-0 flex flex-col items-center justify-center px-6 text-center"
           >
             {eyebrow && (
-              <p className="mb-4 inline-flex items-center rounded-full bg-orange-100 px-4 py-1 text-sm font-medium text-orange-700">
+              <p className="mb-4 inline-flex items-center rounded-full bg-white/90 px-4 py-1 text-sm font-medium text-orange-700">
                 {eyebrow}
               </p>
             )}
             <h1
-              className="font-heading font-black leading-tight tracking-tight text-[#1A1A2E]"
-              style={{ fontSize: 'clamp(1.75rem, 8vw, 4.5rem)', maxWidth: '20ch' }}
+              className="font-heading font-black leading-[0.95] tracking-tight text-[#1A1A2E] drop-shadow-sm"
+              style={{ fontSize: 'clamp(2.5rem, 12vw, 7rem)' }}
             >
-              {title}
+              AgastyaOne
             </h1>
-            <p className="mt-6 max-w-2xl text-base leading-7 text-gray-600 md:text-lg md:leading-8">
-              {subtitle}
-            </p>
-            <div className="mt-8 flex flex-col items-center gap-4 sm:flex-row">
-              <Button href={primaryCta.href} variant="primary">
-                {primaryCta.label}
-              </Button>
-              {secondaryCta && (
-                <a
-                  href={secondaryCta.href}
-                  className="text-sm font-semibold text-gray-500 underline-offset-4 transition hover:text-[#E86C2F] hover:underline"
-                >
-                  {secondaryCta.label} →
-                </a>
-              )}
-            </div>
-          </div>
-
-          {/* Layer 4 — nearest, moves the least: floating proof card */}
-          <div
-            data-parallax-layer="4"
-            className="absolute inset-x-0 bottom-12 flex justify-center md:justify-end md:pr-16"
-          >
-            <div className="flex items-center gap-3 rounded-2xl bg-white px-5 py-4 shadow-lift">
-              <span className="flex h-10 w-10 items-center justify-center rounded-full bg-[#E86C2F]/10 text-[#E86C2F]">
-                <CalendarCheck className="h-5 w-5" aria-hidden="true" />
-              </span>
-              <div>
-                <p className="text-sm font-bold text-[#1A1A2E]">Appointment booked</p>
-                <p className="text-xs text-gray-500">via AgastyaOne CRM</p>
-              </div>
-            </div>
           </div>
         </div>
 
-        <div className="pointer-events-none absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-white to-transparent" />
+        <div className="pointer-events-none absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-[#F8F6F3] to-transparent" />
       </section>
 
-      <div className="flex justify-center py-6 text-gray-400">
-        <ChevronDown className="h-6 w-6 animate-bounce" aria-hidden="true" />
+      {/* Supporting copy + CTAs — sits below the cinematic shot so it stays readable regardless of the photo */}
+      <div className="site-container flex flex-col items-center py-14 text-center">
+        <h2
+          className="font-heading font-black leading-tight tracking-tight text-[#1A1A2E]"
+          style={{ fontSize: 'clamp(1.5rem, 5vw, 2.75rem)', maxWidth: '22ch' }}
+        >
+          {title}
+        </h2>
+        <p className="mt-6 max-w-2xl text-base leading-7 text-gray-600 md:text-lg md:leading-8">
+          {subtitle}
+        </p>
+        <div className="mt-8 flex flex-col items-center gap-4 sm:flex-row">
+          <Button href={primaryCta.href} variant="primary">
+            {primaryCta.label}
+          </Button>
+          {secondaryCta && (
+            <a
+              href={secondaryCta.href}
+              className="text-sm font-semibold text-gray-500 underline-offset-4 transition hover:text-[#E86C2F] hover:underline"
+            >
+              {secondaryCta.label} →
+            </a>
+          )}
+        </div>
+        <ChevronDown className="mt-10 h-6 w-6 animate-bounce text-gray-400" aria-hidden="true" />
       </div>
     </div>
   );
